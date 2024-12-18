@@ -1,0 +1,92 @@
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+.container{
+    width: 100%;
+    background-image:url("fruits1.jpg");
+    background-repeat: no-repeat;
+    
+    background-size: 98%;
+    background-blend-mode: color-burn;
+    height:98%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+ }
+.form{
+        justify-content: center;
+        background-color: rgb(201, 165, 121);
+        border-radius: 20px;
+        padding: 10px;
+        margin: 20px;
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+    }
+.fname{
+    padding: 5px;
+    width: 100%;
+    border:1px gray;
+    border-radius: 8px;
+}
+.hidden{
+    display: block;
+    color: red;
+}
+.form__req1{
+    display: none;
+   
+}
+.button{
+    padding: 10px;
+    background-color:rgb(228, 228, 18);
+    color: black;
+    border:1px gray;
+    border-radius: 10px;
+}
+.button:hover{
+     background-color:rgb(210, 210, 13);
+}
+ /* Media queries */
+ @media screen and (max-width:800px) {
+     h1 {
+            font-size: 20px;
+       }
+       .container
+        {
+        font-size: 16px;
+        }
+    }
+</style>
+<div class="container">
+   <div>
+    <h1>Fruit Name Added</h1>
+    <form class="form" action="http://localhost:5000/fruit">
+    <input value="" class="fname" id="friut" name="fruitname" placeholder="Fruitname">
+    <p class="hidden form__req1"> * This Field is Required</p>
+    <button class="button" id="button" type="submit">Add Fruit</button>
+    </form>
+</div>
+</div>
+
+<script>
+   var fruit = document.getElementById("friut")
+   var btn = document.getElementById("button")
+
+   btn.addEventListener("click",function()
+{
+    if(fruit.value == 0)
+{
+    var req1 = document.querySelector(".form__req1")
+    req1.classList.remove("form__req1")
+    event.preventDefault()  
+}
+ 
+})
+
+</script>
